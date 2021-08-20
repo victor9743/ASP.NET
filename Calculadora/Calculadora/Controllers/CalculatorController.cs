@@ -21,8 +21,8 @@ namespace Calculadora.Controllers
             _logger = logger;
         }
 
-        [HttpGet("sum/{num1}/{num2}")]
-        /*public IActionResult Get(string num1, string num2)
+        [HttpGet("soma/{num1}/{num2}")]
+        public IActionResult soma(string num1, string num2)
         {
 
             if(verificarValor(num1) && verificarValor(num2))
@@ -34,7 +34,7 @@ namespace Calculadora.Controllers
 
             return BadRequest("Valor Inválido");
             
-        }*/
+        }
 
         private decimal converterDecimal(string strNumber)
         {
@@ -63,7 +63,7 @@ namespace Calculadora.Controllers
 
         [HttpGet("subtrair/{num1}/{num2}")]
 
-        /*public IActionResult Get(string num1, string num2)
+        public IActionResult subtracao(string num1, string num2)
         {
             if(verificarValor(num1) && verificarValor(num2))
             {
@@ -73,10 +73,10 @@ namespace Calculadora.Controllers
             }
 
             return BadRequest("Valor Inválido");
-        }*/
+        }
 
-        [HttpGet("Multiplicar/{num1}/{num2}")]
-        /*public IActionResult Get(string num1, string num2)
+        [HttpGet("multiplicar/{num1}/{num2}")]
+        public IActionResult multiplicacao(string num1, string num2)
         {
             if(verificarValor(num1) && verificarValor(num2)){
                 var multiplicar = converterDecimal(num1) * converterDecimal(num2);
@@ -84,10 +84,10 @@ namespace Calculadora.Controllers
             }
 
             return BadRequest("Valor Inválido");
-        }*/
+        }
 
         [HttpGet("dividir/{num1}/{num2}")]
-        /*public IActionResult Get(string num1, string num2)
+        public IActionResult divisao(string num1, string num2)
         {
             if(verificarValor(num1) && verificarValor(num2))
             {
@@ -95,10 +95,10 @@ namespace Calculadora.Controllers
                 return Ok(dividir.ToString());
             }
             return BadRequest("Valor Inválido");
-        }*/
+        }
 
         [HttpGet("media/{num1}/{num2}")]
-        /*public IActionResult Get(string num1, string num2)
+        public IActionResult media(string num1, string num2)
         {
             if(verificarValor(num1) && verificarValor(num2))
             {
@@ -110,14 +110,14 @@ namespace Calculadora.Controllers
 
          
         }
-        */
+        
 
         [HttpGet("raiz/{num}")]
-        public IActionResult Get(string num)
+        public IActionResult raiz(string num)
         {
             if(verificarValor(num))
             {
-                var raiz = converterDecimal(num);
+                var raiz = Math.Sqrt((double)converterDecimal(num));
 
                
 
